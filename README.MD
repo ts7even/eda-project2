@@ -37,6 +37,8 @@ Log folder
 Profiling folder
 * This is where you will find the summary statisics of the varibles. This is for step4-exploritory-linear-regression. Here you will find graphs from MatPlotLib and pandas profiling in HTML and PDF format. 
 
+* On MAC/Linux, the file structure has to be / not \. Windows uses \ for the directories. 
+
 # Git Good 
 
 cd to where you want your project to be 
@@ -46,9 +48,20 @@ cd to where you want your project to be
 ## Git Push & Pull 
 * git init
 * git add . 
-* git status 
+* git status (What branch you are on)
 * git commit -m "First Commit"
 * git push -u origin master 
-Make sure you git pull before you start coding. 
+Make sure you git pull before you start coding on other devives. 
 
 ## Create Git Branches for Team Members
+* git status 'shows you what branch you are on'
+* git branch (branch-name) (and or specific revision)
+* git checkout (branch-name) - switches to diffrent branch
+* git switch (branch-name - prefered way to switch to diffrent branch)
+* git puch -u origin (branch-name)
+
+## Git Merge Merge Branches into master branch. Git rebase rewinds the latest merge
+* git master (go into the master branch)
+* git merge --squash feature (summarize all commits into one commit as latest commit into master branch)
+* git commit -m "Branch merged into Master"
+* git push 
