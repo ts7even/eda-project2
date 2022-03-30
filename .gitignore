@@ -1,7 +1,7 @@
 env/
-source/codebook/
-source/concat/
-source/datasets/
-source/merge/
+source/codebook/*
+source/concat/*
+source/datasets/*
+source/merge/*
 sas_confirm/
 the_code/__pycache__
