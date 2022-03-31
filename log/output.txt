@@ -1,0 +1,338 @@
+
+Step 1: Data Concatenation
+
+Data concatination worked
+The amount of observations that conactinted is 5788
+The amount of variables that concatinated is 3
+Data merged worked for public teacher and public school datasets.
+
+Step 2: Data Merge 
+
+Data merged worked for merging public teacher and schools to current and former teacher data set.
+The amount of observations that merged is 3828
+The amount of variables that merged is 2151
+
+Step 3: Data Cleaning and Variable Creation
+
+Final Teacher Status:
+the total number of teachers that moved to another school: 872
+the total number of teachers that stayed at the same school: 1412
+the total number of teachers that left teaching: 1544
+To verify the sum of responses to "status": 3828
+count     3828
+unique       3
+top          L
+freq      1544
+Name: STATUS, dtype: object
+
+Teachers categorized by age group:
+the total number of teachers that are less than 30 years: 1007
+the total number of teachers that are 30 to 39 years: 783
+the total number of teachers that are 40 to 49 years: 832
+the total number of teachers that are 50 years or older: 1206
+To verify the sum of responses to "teacher age": 3828
+count    3828.000000
+mean        2.584378
+std         1.182989
+min         1.000000
+25%         1.000000
+50%         3.000000
+75%         4.000000
+max         4.000000
+Name: AGE_T, dtype: float64
+
+How many teachers are male and female?
+the total number of teachers that are male: 1156
+the total number of teachers that are female: 2672
+To verify the sum of responses to "teacher age": 3828
+The proportion of 
+count    3828.000000
+mean        1.698015
+std         0.459179
+min         1.000000
+25%         1.000000
+50%         2.000000
+75%         2.000000
+max         2.000000
+Name: T0356, dtype: float64
+
+What color are you?
+the total number of teachers that are American Indian or Alaska Native, non-Hispanic: 70
+the total number of teachers that are Asian or Pacific Islander, non-Hispanic: 76
+the total number of teachers that are Black, non-Hispanic: 239
+the total number of teachers that are White, non-Hispanic: 3249
+the total number of teachers that are Hispanic, regardless of race: 194
+To verify the sum of responses to "teacher age": 3828
+count    3828.000000
+mean        3.893678
+std         0.588125
+min         1.000000
+25%         4.000000
+50%         4.000000
+75%         4.000000
+max         5.000000
+Name: RACETH_T, dtype: float64
+
+Teacher's total number of years teaching full or part-time in public and private schools?
+count    3828.000000
+mean       13.449843
+std        11.640456
+min         1.000000
+25%         3.000000
+50%         9.000000
+75%        23.000000
+max        47.000000
+Name: TOTEXPER, dtype: float64
+
+What is the teachers general field/main assignment?
+The total number of teachers that teach Prekindergarten, kindergarten, and generla elementary: 1005
+The total number of teachers that teach Math and science: 608
+The total number of teachers that teach English/language arts: 418
+The total number of teachers that teach Social science: 251
+The total number of teachers that teach Special education: 425
+The total number of teachers that teach Foreign languages: 130
+The total number of teachers that teach Bilingual/ESL education: 55
+The total number of teachers that teach Vocational/technical education: 242
+The total number of teachers that teach all other: 694
+To verify the sum of responses to "teacher experience: 3828
+count    3828.000000
+mean        4.166928
+std         3.000319
+min         1.000000
+25%         1.000000
+50%         3.000000
+75%         7.000000
+max         9.000000
+Name: ASSIGN, dtype: float64
+
+In your first year of teaching, to what extent did your master or mentor teacher help you?
+The number of teachers that responded with "Not at all": 28
+The number of teachers that responded with "To little extent": 90
+The number of teachers that responded with "To some extent": 197
+The number of teachers that responded with "To a good extent": 210
+The number of teachers that responded with "To a great extent": 318
+To verify the sum of responses to "teacher experience: 843
+count    3828.000000
+mean       -5.394723
+std         4.932377
+min        -8.000000
+25%        -8.000000
+50%        -8.000000
+75%        -8.000000
+max         5.000000
+Name: T0149, dtype: float64
+
+How many students are enolled?
+There are 748 schools with fewer than 300 students.
+There are 773 schools with between 300 and 499 students.
+There are 2307 schools with more than 500 students.
+To verify the sum of responses to "school enrollment": 3828
+count    3828.000000
+mean        2.407262
+std         0.795217
+min         1.000000
+25%         2.000000
+50%         3.000000
+75%         3.000000
+max         3.000000
+Name: S0101, dtype: float64
+
+School level based on school reported grade levels offered.
+There are 1890 elementary level schools: a school that has any of grades K-6 and none of grades 9-12.
+There are 1709 secondary level schools: a school that has any of grades 7-12 and none of grades K-6.
+There are 229 combined level schools: for all other cases.
+To verify the sum of responses to "school level": 3828
+count    3828.000000
+mean        1.566092
+std         0.604460
+min         1.000000
+25%         1.000000
+50%         2.000000
+75%         2.000000
+max         3.000000
+Name: SCHLEVEL_y, dtype: float64
+
+Has the teacher ever been physically attacked by a student?
+Total number of teachers that have never been attacked: 3499
+Total number of teachers that have been attacked, but not in the last 12 months: 157
+Total number of teachers that have been attacked in the past 12 months: 172
+To verify the sum of responses to "teacher ever being attacked": 3828
+count    3828.000000
+mean        0.130878
+std         0.451294
+min         0.000000
+25%         0.000000
+50%         0.000000
+75%         0.000000
+max         2.000000
+Name: ATTACK, dtype: float64
+
+
+Step 4: Exploritory Data Analysis and simple linear regrssion
+
+The summary stats for the dependent variable...
+count    3828.000000
+mean        1.965517
+std         0.878190
+min         1.000000
+25%         1.000000 = 'L' ~ Left Teacher
+50%         2.000000 = 'M' ~ Moved Schools
+75%         3.000000 = 'S' ~ Stayed at the School
+max         3.000000
+Name: NEW_STATUS, dtype: float64
+
+Summary stats for age
+count    3828.000000
+mean        2.584378
+std         1.182989
+min         1.000000
+25%         1.000000
+50%         3.000000
+75%         4.000000
+max         4.000000
+Name: AGE_T, dtype: float64
+
+Summary Stats for sex
+count    3828.000000
+mean        1.698015
+std         0.459179
+min         1.000000
+25%         1.000000
+50%         2.000000
+75%         2.000000
+max         2.000000
+Name: T0356, dtype: float64
+
+Summary Stats for race
+count    3828.000000
+mean        3.893678
+std         0.588125
+min         1.000000
+25%         4.000000
+50%         4.000000
+75%         4.000000
+max         5.000000
+Name: RACETH_T, dtype: float64
+
+Summary stats for experiance
+count    3828.000000
+mean       13.449843
+std        11.640456
+min         1.000000
+25%         3.000000
+50%         9.000000
+75%        23.000000
+max        47.000000
+Name: TOTEXPER, dtype: float64
+
+Summary stats for techer assignment
+count    3828.000000
+mean        4.166928
+std         3.000319
+min         1.000000
+25%         1.000000
+50%         3.000000
+75%         7.000000
+max         9.000000
+Name: ASSIGN, dtype: float64
+
+Summary stats for mentorship
+count    843.000000
+mean       3.830368
+std        1.144408
+min        1.000000
+25%        3.000000
+50%        4.000000
+75%        5.000000
+max        5.000000
+Name: T0149, dtype: float64
+
+Summary stats for enrollment size
+count    3828.000000
+mean        2.407262
+std         0.795217
+min         1.000000
+25%         2.000000
+50%         3.000000
+75%         3.000000
+max         3.000000
+Name: S0101, dtype: float64
+
+Summary Stats for school level 
+count    3828.000000
+mean        1.566092
+std         0.604460
+min         1.000000
+25%         1.000000
+50%         2.000000
+75%         2.000000
+max         3.000000
+Name: SCHLEVEL_x, dtype: float64
+
+Summary stats for attaked teachers
+count    3828.000000
+mean        0.130878
+std         0.451294
+min         0.000000
+25%         0.000000
+50%         0.000000
+75%         0.000000
+max         2.000000
+Name: ATTACK, dtype: float64
+
+Single Simple Regression Summary
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             NEW_STATUS   R-squared:                       0.040
+Model:                            OLS   Adj. R-squared:                  0.040
+Method:                 Least Squares   F-statistic:                     161.4
+Date:                Thu, 31 Mar 2022   Prob (F-statistic):           3.01e-36
+Time:                        13:42:49   Log-Likelihood:                -4854.9
+No. Observations:                3828   AIC:                             9714.
+Df Residuals:                    3826   BIC:                             9726.
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      2.3515      0.033     70.376      0.000       2.286       2.417
+AGE_T         -0.1493      0.012    -12.704      0.000      -0.172      -0.126
+==============================================================================
+Omnibus:                    21332.121   Durbin-Watson:                   0.511
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              396.262
+Skew:                           0.144   Prob(JB):                     8.97e-87
+Kurtosis:                       1.450   Cond. No.                         7.54
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Multiple Regression Summary
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:             NEW_STATUS   R-squared:                       0.077
+Model:                            OLS   Adj. R-squared:                  0.076
+Method:                 Least Squares   F-statistic:                     79.37
+Date:                Thu, 31 Mar 2022   Prob (F-statistic):           8.76e-65
+Time:                        13:42:51   Log-Likelihood:                -4781.3
+No. Observations:                3828   AIC:                             9573.
+Df Residuals:                    3823   BIC:                             9604.
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+Intercept      1.8627      0.103     18.015      0.000       1.660       2.065
+RACETH_T       0.0774      0.023      3.335      0.001       0.032       0.123
+ASSIGN        -0.0149      0.005     -3.283      0.001      -0.024      -0.006
+TOTEXPER      -0.0198      0.001    -16.888      0.000      -0.022      -0.018
+S0101          0.0542      0.017      3.152      0.002       0.020       0.088
+==============================================================================
+Omnibus:                    36234.635   Durbin-Watson:                   0.604
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):              330.928
+Skew:                           0.152   Prob(JB):                     1.38e-72
+Kurtosis:                       1.592   Cond. No.                         143.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.

@@ -32,8 +32,17 @@ def main_step4():
     step4_exploratory_linear_regression.summaryStatsindependent()
     step4_exploratory_linear_regression.graphingMentorIndependentVariable()
     step4_exploratory_linear_regression.graphingAttackIndependentVariable()
-
-
+    step4_exploratory_linear_regression.graphingAgeIndependentVariable()
+    step4_exploratory_linear_regression.graphingGenderIndependentVariable()
+    step4_exploratory_linear_regression.graphingRaceIndependentVariable()
+    step4_exploratory_linear_regression.graphingSchlevelIndependentVariable()
+    step4_exploratory_linear_regression.graphingEnrollmentIndependentVariable()
+    step4_exploratory_linear_regression.graphingAssignIndependentVariable()
+    step4_exploratory_linear_regression.graphTwoVariables()
+    step4_exploratory_linear_regression.simpleRegression()
+    step4_exploratory_linear_regression.multiRegression()
+    # step4_exploratory_linear_regression.profiler()
+  
 
 main_step1()
 main_step2()

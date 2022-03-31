@@ -19,7 +19,7 @@ def dataMerge():
 def dataMerge2():
     df3 = pd.read_csv('source/concat/data-concat.csv')
     df4 = pd.read_csv('source/merge/data-merge.csv')
-    data_merge2 = pd.merge(df3, df4, how='left', on='CNTLNUM')
+    data_merge2 = pd.merge(df3, df4, on='CNTLNUM')
     data_merge2.to_csv('source/merge/data-merge2.csv')
     data_merge2_observations = data_merge2.shape[0]
     data_merge2_variables = data_merge2.shape[1]
