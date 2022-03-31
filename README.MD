@@ -54,7 +54,9 @@ cd to where you want your project to be
 * git status (What branch you are on)
 * git commit -m "First Commit"
 * git push -u origin master 
-Make sure you git pull before you start coding on other devives. 
+Make sure you git fetch then git pull before you start coding on other devices. 
+Also Create a developer branch, and then a branch with your name. Total 3 Branches, or one branch per person? 
+look up tickets. 
 
 ## Create Git Branches for Team Members
 * git status 'shows you what branch you are on'
@@ -68,3 +70,4 @@ Make sure you git pull before you start coding on other devives.
 * git merge --squash feature (summarize all commits into one commit as latest commit into master branch)
 * git commit -m "Branch merged into Master"
 * git push 
+
