@@ -2,14 +2,15 @@ import matplotlib
 import pandas as pd
 import numpy as np 
 import pandas_profiling 
-from pandas_profiling import profile_report
+from pandas_profiling import ProfileReport
 import scipy as sp
 import matplotlib.pyplot as plt
 import sklearn
-from sklearn import linear_model
-from sklearn.utils import shuffle
+from sklearn.linear_model import LinearRegression
+import statsmodels.formula.api as smf
 
 
+# try pands profiling for report
 # Linear Regression can only be used with Continuous Variables (Measured by goodnes of fit by loss, R-Squared, Adjusted R)
 # Logistic Regression can be used with Categorical Variables (Measued by goodness of fit with Accuracy, Precision, Recall, F1 Score, ROC, Curve, Confusion Matrix, etc)
 
@@ -145,39 +146,30 @@ def graphTwoVariables(): # Step 3
 
 
 def exampleRegression():
-    # Simple Single Linear Regression
-    df = pd.read_excel('source/datasets/HPRICE.XLS')
+    # Simple Single Linear Regression using statsmodels and matplotlib
+    df = pd.read_excel('source/datasets/HPRICE.xlsx')
 
-    yaxis = df['sale price']
-    xaxis1 = df['lot size']
-    xaxis2 = df['#bedroom']
-    xaxis3 = df['#bath']
+    y = df['saleprice']
+    x = df['lotsize']
 
-    mean_x = np.mean(xaxis1)
-    mean_y = np.mean(yaxis)
+    model = smf.ols('saleprice ~ lotsize', data=df)
+    model = model.fit()
+    price_pred = model.predict()
 
-    m = len(xaxis1)
-    numer = 0
-    denom  = 0
-    for i in range(m):
-        numer += ((xaxis1[i] - mean_x) * (yaxis[i] - mean_y))
-        denom += ((xaxis1[i] - mean_x) ** 2)
-    b1 = numer / denom
-    b0 = mean_y - (b1 * mean_x)
-    print(b1, b0)
-    max_x = np.max(xaxis1) + 100
-    min_x = np.min(xaxis1) - 100
 
-    x = np.linspace(min_x, max_x, 1000)
-    y = b0 + b1 * x
-
-    plt.plot(xaxis1 , yaxis, color='red', label='Regression Line')
-    plt.scatter(xaxis1, yaxis, color='blue', label='Scatter Plot')
+    plt.plot(x, y, 'o')
+    plt.plot(x, price_pred, 'r', linewidth=2)
     plt.xlabel('Lot Size')
     plt.ylabel('Sale Price')
-    plt.legend()
+    plt.title('Sales Price vs Lotsize')
     plt.show()
 
+
+
+def profiler():
+    df = df1[['STATUS', 'ASSIGN', 'SCHLEVEL_y', 'T0356']]
+    profile = ProfileReport(df, title='Mutiple Variable Profile', minimal=True)
+    profile.to_file('profiling/project-profiling.html')
 
 # summaryStatsdependent()
 # summaryStatsindependent()
@@ -190,7 +182,10 @@ def exampleRegression():
 # graphingEnrollmentIndependentVariable()
 # graphingAssignIndependentVariable() - Not Happy with this one
 # graphTwoVariables() - Not Happy with this one
-exampleRegression()
+# exampleRegression()
+# profiler()
+
+
 
 
 
