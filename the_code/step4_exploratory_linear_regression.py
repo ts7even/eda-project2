@@ -1,11 +1,17 @@
 import matplotlib
 import pandas as pd
 import numpy as np 
-import pandas_profiling as pp
+import pandas_profiling 
+from pandas_profiling import profile_report
 import scipy as sp
 import matplotlib.pyplot as plt
+import sklearn
+from sklearn import linear_model
+from sklearn.utils import shuffle
 
 
+# Linear Regression can only be used with Continuous Variables (Measured by goodnes of fit by loss, R-Squared, Adjusted R)
+# Logistic Regression can be used with Categorical Variables (Measued by goodness of fit with Accuracy, Precision, Recall, F1 Score, ROC, Curve, Confusion Matrix, etc)
 
 df1 = pd.read_csv('source/merge/data-merge2.csv', low_memory=False)
 
@@ -22,7 +28,7 @@ def summaryStatsindependent():
     age_independent_variable = df1['AGE_T'].describe()
     sex_independent_variable = df1['T0356'].describe()
     race_independent_variable = df1['RACETH_T'].describe()
-    expericance_independent_variable = df1['TOTEXPER'].describe()
+    expericance_independent_variable = df1['TOTEXPER'].describe() #Continuous
     assign_independent_variable = df1['ASSIGN'].describe()
     mentor_independent_varable = df1[(df1['T0149']!=-8)]
     cleaned_mentor_independent_variable = mentor_independent_varable['T0149'].describe()
@@ -59,7 +65,6 @@ def summaryStatsindependent():
 
 
 matplotlib.use('Qt5Agg')
-
 def graphingMentorIndependentVariable():
     mentor_histogram = df1[(df1['T0149']!=-8)]
     filtered_mentor_histogram = mentor_histogram[['T0149']]
@@ -77,8 +82,123 @@ def graphingAttackIndependentVariable():
     plt.xticks([0,1,2], ['Never Attacked', 'Not attacked in the last 12 months', 'Attacked in the last 12 months'])
     plt.show()
 
- 
+def graphingAgeIndependentVariable():
+    age_histogram = df1['AGE_T']
+    plt.hist(age_histogram)
+    plt.title("What is the Teacher Age?")
+    plt.ylabel("Observations")
+    plt.xticks([1,2,3,4], ['< 30', '30 - 39', '40-49', '50 >'])
+    plt.show()
+
+def graphingGenderIndependentVariable():
+    gender_histogram = df1['T0356']
+    plt.hist(gender_histogram)
+    plt.title("What is the Teacher Gender?")
+    plt.ylabel("Observations")
+    plt.xticks([1,2], ['Male', 'Female'])
+    plt.show()
+
+def graphingRaceIndependentVariable():
+    race_histogram = df1['RACETH_T']
+    plt.hist(race_histogram)
+    plt.title("What is the Teacher's race?")
+    plt.ylabel("Observations")
+    plt.xticks([1,2,3,4,5], ['American Indian', 'Asian', 'Black', 'White', 'Hispanic'])
+    plt.show()
+
+def graphingSchlevelIndependentVariable():
+    schlevel_histogram = df1['SCHLEVEL_y']
+    plt.hist(schlevel_histogram)
+    plt.title("What kind of school does the teacher teach?")
+    plt.ylabel("Observations")
+    plt.xticks([1,2,3], ['Elementary', 'Secondary', 'Combined'])
+    plt.show()
+
+def graphingEnrollmentIndependentVariable():
+    enrollment_histogram = df1['S0101']
+    plt.hist(enrollment_histogram)
+    plt.title("What is the total enrollment?")
+    plt.ylabel("Observations")
+    plt.xticks([1,2,3], ['< 300', '300 - 499', '500 >'])
+    plt.show()
+
+def graphingAssignIndependentVariable():
+    assign_histogram = df1['ASSIGN']
+    plt.hist(assign_histogram)
+    plt.title("What is the teachers assignment?")
+    plt.ylabel("Observations")
+    plt.xticks([1,2,3,4,5,6,7,8,9], ['general-elementary', 'Math and Science', 'English','Social Science', 'Special Education', 'Foreign Language', 'ESL Education', 'Vocational', 'All Others'])
+    plt.show()
+
+def graphTwoVariables(): # Step 3
+    #  Simple Linear Regression
+    clean_yaxis = df1[(df1['STATUS']=='L')].dropna() # Dependent Variable:  Leaver 
+    yaxis = clean_yaxis['STATUS']
+    xaxis = clean_yaxis['ASSIGN']# Independent variable of experiance
+    # print(yaxis.head)
+    # print(xaxis.head)
+    plt.hist(xaxis)
+    plt.title("What is the teachers assignment when leaving?")
+    plt.xticks([1,2,3,4,5,6,7,8,9], ['general-elementary', 'Math and Science', 'English','Social Science', 'Special Education', 'Foreign Language', 'ESL Education', 'Vocational', 'All Others'])
+    plt.ylabel('Left Teaching')
+    plt.show()
+
+
+def exampleRegression():
+    # Simple Single Linear Regression
+    df = pd.read_excel('source/datasets/HPRICE.XLS')
+
+    yaxis = df['sale price']
+    xaxis1 = df['lot size']
+    xaxis2 = df['#bedroom']
+    xaxis3 = df['#bath']
+
+    mean_x = np.mean(xaxis1)
+    mean_y = np.mean(yaxis)
+
+    m = len(xaxis1)
+    numer = 0
+    denom  = 0
+    for i in range(m):
+        numer += ((xaxis1[i] - mean_x) * (yaxis[i] - mean_y))
+        denom += ((xaxis1[i] - mean_x) ** 2)
+    b1 = numer / denom
+    b0 = mean_y - (b1 * mean_x)
+    print(b1, b0)
+    max_x = np.max(xaxis1) + 100
+    min_x = np.min(xaxis1) - 100
+
+    x = np.linspace(min_x, max_x, 1000)
+    y = b0 + b1 * x
+
+    plt.plot(xaxis1 , yaxis, color='red', label='Regression Line')
+    plt.scatter(xaxis1, yaxis, color='blue', label='Scatter Plot')
+    plt.xlabel('Lot Size')
+    plt.ylabel('Sale Price')
+    plt.legend()
+    plt.show()
+
+
 # summaryStatsdependent()
 # summaryStatsindependent()
 # graphingMentorIndependentVariable()
 # graphingAttackIndependentVariable()
+# graphingAgeIndependentVariable()
+# graphingGenderIndependentVariable()
+# graphingRaceIndependentVariable()
+# graphingSchlevelIndependentVariable()
+# graphingEnrollmentIndependentVariable()
+# graphingAssignIndependentVariable() - Not Happy with this one
+# graphTwoVariables() - Not Happy with this one
+exampleRegression()
+
+
+
+# Drop NA amount of teacher that left is 1544
+# Problem-drug abuse #T0330
+# Problem Disrespect for Teachers #T0332
+# Sch yr-amount tchr pay # T0347
+# Grade Level of Students Taught by Teacher #TEALEV
+# New teacher flag # NEWTEACH
+
+

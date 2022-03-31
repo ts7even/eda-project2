@@ -1,5 +1,7 @@
 Project 2 - Python Team
 
+- Might need to dropna() for the merge2 files
+
 # Team Members and their contribution
 Trevor Seibert - Project Leader
 * Formated the project structure
@@ -26,6 +28,7 @@ pip install ~
 * scipy 
 * PyQt5
 * Tk (Tkinter)
+* scikit-learn
 
 # File Structure 
 The_Code folder
@@ -58,7 +61,7 @@ Make sure you git pull before you start coding on other devives.
 * git branch (branch-name) (and or specific revision)
 * git checkout (branch-name) - switches to diffrent branch
 * git switch (branch-name - prefered way to switch to diffrent branch)
-* git puch -u origin (branch-name)
+* git push -u origin (branch-name)
 
 ## Git Merge Merge Branches into master branch. Git rebase rewinds the latest merge
 * git master (go into the master branch)
