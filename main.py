@@ -41,7 +41,7 @@ def main_step4():
     step4_exploratory_linear_regression.graphTwoVariables()
     step4_exploratory_linear_regression.simpleRegression()
     step4_exploratory_linear_regression.multiRegression()
-    # step4_exploratory_linear_regression.profiler()
+    step4_exploratory_linear_regression.profiler()
   
 
 main_step1()
