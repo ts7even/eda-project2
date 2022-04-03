@@ -234,21 +234,10 @@ def multiRegression():
     print('Multiple Regression Summary')
     print(model.summary())
     print()
-
-
-
-    # reg = linear_model.LinearRegression()
-    # reg.fit([x1, x2, x3, x4], y)
-
-
-    # plt.plot([x1,x2,x3,x4], y, 'o')
-    # plt.plot(x1,x2,x3,x4, prediction, 'r', linewidth=2)
-    # plt.xlabel('Teacher Ages')
-    # plt.ylabel('Teacher Status')
-    # plt.title('Teacher Status vs Age')
-    # plt.show(block=False)
-    # plt.pause(2)
-    # plt.close()
+    print("For RACETH_T significance is .44 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. ")
+    print("For ASSIGN significance is .015 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  ")
+    print("For TOTEXPER significance is .1.07 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  ")
+    print("For S0101 significance is 0.077 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. ")
 
 
 
@@ -260,7 +249,11 @@ def profiler():
 
 
 
-summaryStatsdependent()
+
+
+
+
+# summaryStatsdependent()
 # summaryStatsindependent()
 # graphingMentorIndependentVariable()
 # graphingAttackIndependentVariable()
@@ -272,8 +265,8 @@ summaryStatsdependent()
 # graphingAssignIndependentVariable() # 
 # graphTwoVariables() 
 # exampleRegression()
-# simpleRegression()
-# multiRegression() # Need Help
+simpleRegression()
+multiRegression() # Need Help
 # profiler()
 
 

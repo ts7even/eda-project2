@@ -1,6 +1,5 @@
 Project 2 - Python Team
 
-- Might need to dropna() for the merge2 files
 
 # Team Members and their contribution
 Trevor Seibert - Project Leader
@@ -8,16 +7,16 @@ Trevor Seibert - Project Leader
 * Spent Roughly 12hrs on Project
 
 Crisitan Mayen - Researcher
-* 
-* 
+* Co-created Step 3 data cleaning 
+* Spent Roughly 12hrs on project
 
 Philip Ervin - Researcher 
-* 
-* 
+* Co-created Step 3 data cleaning 
+* Spent roughly 12hrs on project
 
 Christopher Webster - Database Specialist 
-* 
-* 
+* Co-created Step-4 exploritory analysis, verified calculations. 
+* Spent roughtly 12hrs on project. 
 
 # Dependencies 
 pip install ~
