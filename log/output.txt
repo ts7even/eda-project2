@@ -175,9 +175,9 @@ count    3828.000000
 mean        1.965517
 std         0.878190
 min         1.000000
-25%         1.000000 = 'L' ~ Left Teacher
-50%         2.000000 = 'M' ~ Moved Schools
-75%         3.000000 = 'S' ~ Stayed at the School
+25%         1.000000
+50%         2.000000
+75%         3.000000
 max         3.000000
 Name: NEW_STATUS, dtype: float64
 
@@ -280,14 +280,16 @@ min         0.000000
 max         2.000000
 Name: ATTACK, dtype: float64
 
+
+
 Single Simple Regression Summary
                             OLS Regression Results                            
 ==============================================================================
 Dep. Variable:             NEW_STATUS   R-squared:                       0.040
 Model:                            OLS   Adj. R-squared:                  0.040
 Method:                 Least Squares   F-statistic:                     161.4
-Date:                Thu, 31 Mar 2022   Prob (F-statistic):           3.01e-36
-Time:                        13:42:49   Log-Likelihood:                -4854.9
+Date:                Sun, 03 Apr 2022   Prob (F-statistic):           3.01e-36
+Time:                        16:51:09   Log-Likelihood:                -4854.9
 No. Observations:                3828   AIC:                             9714.
 Df Residuals:                    3826   BIC:                             9726.
 Df Model:                           1                                         
@@ -304,8 +306,11 @@ Skew:                           0.144   Prob(JB):                     8.97e-87
 Kurtosis:                       1.450   Cond. No.                         7.54
 ==============================================================================
 
-Notes:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+
+
+
 
 Multiple Regression Summary
                             OLS Regression Results                            
@@ -313,8 +318,8 @@ Multiple Regression Summary
 Dep. Variable:             NEW_STATUS   R-squared:                       0.077
 Model:                            OLS   Adj. R-squared:                  0.076
 Method:                 Least Squares   F-statistic:                     79.37
-Date:                Thu, 31 Mar 2022   Prob (F-statistic):           8.76e-65
-Time:                        13:42:51   Log-Likelihood:                -4781.3
+Date:                Sun, 03 Apr 2022   Prob (F-statistic):           8.76e-65
+Time:                        16:51:11   Log-Likelihood:                -4781.3
 No. Observations:                3828   AIC:                             9573.
 Df Residuals:                    3823   BIC:                             9604.
 Df Model:                           4                                         
@@ -336,3 +341,8 @@ Kurtosis:                       1.592   Cond. No.                         143.
 
 Notes:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+For RACETH_T significance is .44 which is too high to make a conclusion about the data; this is because we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. 
+For ASSIGN significance is .015 which is too high to make a conclusion about the data; this is becasue we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  
+For TOTEXPER significance is .107 which is too high to make a conclusion about the data; this is becasue we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  
+For S0101 significance is .077 which is too high to make a conclusion about the data; this is becasue we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. 

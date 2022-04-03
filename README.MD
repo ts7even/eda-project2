@@ -7,11 +7,11 @@ Trevor Seibert - Project Leader
 * Spent Roughly 12hrs on Project
 
 Crisitan Mayen - Researcher
-* Co-created Step 3 data cleaning 
+* Co-created Step-3 data cleaning, researched variables and data
 * Spent Roughly 12hrs on project
 
 Philip Ervin - Researcher 
-* Co-created Step 3 data cleaning 
+* Co-created Step-3 data cleaning, researched variables and data
 * Spent roughly 12hrs on project
 
 Christopher Webster - Database Specialist 
@@ -28,6 +28,7 @@ pip install ~
 * PyQt5
 * Tk (Tkinter)
 * scikit-learn
+* statsmodels
 
 # File Structure 
 The_Code folder
