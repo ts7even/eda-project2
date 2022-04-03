@@ -234,10 +234,10 @@ def multiRegression():
     print('Multiple Regression Summary')
     print(model.summary())
     print()
-    print("For RACETH_T significance is .44 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. ")
-    print("For ASSIGN significance is .015 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  ")
-    print("For TOTEXPER significance is .107 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  ")
-    print("For S0101 significance is .077 which is too high to make a conclusion about the data; this is becasue we nedd a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. ")
+    print("For RACETH_T significance is .44 which is too high to make a conclusion about the data; this is because we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. ")
+    print("For ASSIGN significance is .015 which is too high to make a conclusion about the data; this is because we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  ")
+    print("For TOTEXPER significance is .107 which is too high to make a conclusion about the data; this is because we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions.  ")
+    print("For S0101 significance is .077 which is too high to make a conclusion about the data; this is because we need a value of less than .05 to be sure that the variable has an effect on the thing we are measuring. Sign is positive. Size is 3823 observasions. ")
 
 
 
