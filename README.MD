@@ -71,3 +71,10 @@ look up tickets.
 * git commit -m "Branch merged into Master"
 * git push 
 
+
+## Linear regression 
+* recode STATUS for L:0, S,M:1
+* Need to recode RACETH_T to only code asian, black hispanic, native american
+* regress levaer age_above_50 age_below_50
+* TOT_Experiance is a continuous variable
+* Regress ASSIGN Humanties MAth Bilingual 
